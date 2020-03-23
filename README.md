@@ -42,7 +42,7 @@ func main() {
 			log.Fatal(err)
 		}
     // urls can be remote too
-		p.SetStreamURL("/home/manasseh/Videos/Jumanji.mp4")
+		p.URL("/home/manasseh/Videos/Jumanji.mp4")
 		p.SetTitle("Jumanji MP4")
 		p.Play()
 }

@@ -11,26 +11,28 @@ import (
 type Player interface {
 	Play()
 	SetTitle(string)
-	SetStreamURL(string)
+	SetURL(string)
 }
 
 // Props : Props to be passed to Player
 type Props struct {
-	StreamURL string
-	Title     string
+	URL   string
+	Title string
 }
 
 func (p *Props) SetTitle(title string) {
 	p.Title = title
 }
 
-func (p *Props) SetStreamURL(streamURL string) {
-	p.StreamURL = streamURL
+func (p *Props) SetURL(URL string) {
+	p.URL = URL
 }
 
+// GetPlayers : A map of all available players
 func GetPlayers() map[string]Player {
 	engines := make(map[string]Player)
 	engines["browser"] = &BrowserPlayer{}
+	engines["mpv"] = &MPVPlayer{}
 	//  engines["mpv"] = NewFzEngine()
 	return engines
 }

@@ -41,13 +41,14 @@ const tpl = `
 
 <body>
 		<video id="content" controls autoplay>
-      <source src="{{ .StreamURL}}">
+      <source src="{{ .URL}}">
       Your browser does not support the video tag.
     </video> 
 </body>
 </html>
 `
 
+// Play : Opens browser and play media
 func (p *BrowserPlayer) Play() {
 	tmpl, err := template.New("streamingPage").Parse(tpl)
 	if err != nil {
