@@ -1,0 +1,22 @@
+sudo: false
+
+language: go
+
+go:
+  - 1.13.x
+  - tip
+
+matrix:
+  allow_failures:
+    - go: tip
+
+install:
+  - go get golang.org/x/lint/golint
+  - export PATH=$GOPATH/bin:$PATH
+  - go install ./...
+
+script:
+  - go test -v ./...
+
+notifications:
+  email: false
