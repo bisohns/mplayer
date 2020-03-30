@@ -10,6 +10,9 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
   </a>
+  <a href="https://travis-ci.com/bisoncorps/mplayer">
+    <img src="https://travis-ci.com/bisoncorps/mplayer.svg?branch=master" alt="Build Status">
+  </a>
 </div>
 A library to allow playing media files (remote and local) from your gocode
 
@@ -24,6 +27,7 @@ mplayer is just a means to allow for playing media files from golang. It allows 
 files and local media files as well. It hopes to incorporate functionalities that support using any known
 media player. Currently only browser is supported but other players are currently being considered. It supports
 
+- In Browser Playing, MPV and VLC
 - playing local files
 - streaming online resource
 
@@ -42,12 +46,12 @@ func main() {
 			log.Fatal(err)
 		}
     // urls can be remote too
-		p.URL("/home/manasseh/Videos/Jumanji.mp4")
+		p.SetURL("/home/manasseh/Videos/Jumanji.mp4")
 		p.SetTitle("Jumanji MP4")
 		p.Play()
 }
 ```
 
 ## TODO
-- [ ] Add other players (mpv, vlc)
+- [x] Add other players (mpv, vlc)
 - [ ] Add subtitle options

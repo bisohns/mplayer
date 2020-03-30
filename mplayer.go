@@ -33,6 +33,7 @@ func GetPlayers() map[string]Player {
 	engines := make(map[string]Player)
 	engines["browser"] = &BrowserPlayer{}
 	engines["mpv"] = &MPVPlayer{}
+	engines["vlc"] = &VLCPlayer{}
 	//  engines["mpv"] = NewFzEngine()
 	return engines
 }
